@@ -129,6 +129,7 @@ a {
   background-color: var(--background-color);
   box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.2),
               3px 0 5px var(--shadow-color);
+              animation: getAnimationDuration(1s) slideInLeft;
   .sidebar-link{
     display: block;
     padding: .5em 1em;
@@ -161,6 +162,7 @@ a {
   padding-inline: 15vw;
 }
 
+@import "/src/styles/partials/animations.css";
 @media screen and (max-width: 768px){
   .navbar{
     .nav-links{

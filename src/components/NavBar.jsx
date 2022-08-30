@@ -22,6 +22,11 @@ export default function NavBar() {
       icon: faCog,
     },
   ];
+
+  function closeSidebar() {
+    setShowSidebar(false)
+  }
+
   return (
     <>
       <div className="navbar container">
@@ -39,7 +44,7 @@ export default function NavBar() {
           <a href="#!">Settings</a> */}
         </div>
         <div
-          onClick={() => setShowSidebar(!showSideBar)}
+          onClick={() => setShowSidebar(true)}
           className={showSideBar ? "sidebar-btn active" : "sidebar-btn"}
         >
           <div className="bar"></div>
@@ -47,7 +52,7 @@ export default function NavBar() {
           <div className="bar"></div>
         </div>
       </div>
-      <Sidebar links={links} />
+      {showSideBar && <Sidebar close={closeSidebar} links={links} />}
     </>
   );
 }
